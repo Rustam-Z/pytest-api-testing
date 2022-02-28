@@ -1,0 +1,3 @@
+pytest
+"pydantic[email]"
+python-decouple
