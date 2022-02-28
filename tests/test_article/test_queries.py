@@ -42,4 +42,3 @@ def test_get_article_id():
     # assert query.execute().title == article.title
     # assert query.execute().content == article.content
     # assert query.execute().author == article.author
-    #

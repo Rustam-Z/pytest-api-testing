@@ -1,4 +1,4 @@
-# Test-Driven Development with Blog App in Python
+# API Testing for blog app
 
 ### Libraries used:
 - `pytest` - unit, integration, E2E testing
@@ -20,9 +20,16 @@
 - Articles can be fetched
 - Articles can be listed
 
-
 ### How to run?
 - `python -m pytest -v --tb=no tests/`
+- `python -m pytest tests --cov=src --cov-report html`
+- `python blog/init_db.py && FLASK_APP=blog/app.py python -m flask run`
+- `python -m pytest tests -m 'e2e'`
+
+### Creating a Flask API
+- `/create-article/` - creates a new article
+- `/articles/` - retrieve all articles
+- `/article/<article_id>/` - fetch a single article, `article_id` is string type
 
 ## Read more here
 - https://testdriven.io/blog/modern-tdd/
