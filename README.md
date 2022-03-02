@@ -23,8 +23,9 @@
 ### How to run?
 - `python -m pytest -v --tb=no tests/`
 - `python -m pytest tests --cov=src --cov-report html`
-- `python src/init_db.py && FLASK_APP=src/app.py python -m flask run`
-- `python -m pytest tests -m 'e2e'`
+- For E2E test use `python src/init_db.py` and `FLASK_APP=src/app.py python -m flask run`
+    - If you got a problem use `export PYTHONPATH=$PYTHONPATH:$PWD`
+    - And, `python -m pytest tests -m 'e2e'`
 
 ### Creating a Flask API
 - `/create-article/` - creates a new article

@@ -14,7 +14,7 @@ def handle_validation_exception(error):
     return response
 
 
-@app.route('/create-article/', methods=['GET'])
+@app.route('/create-article/', methods=['POST'])
 def create_article():
     command = CreateArticleCommand(**request.json)
     article = command.execute()
@@ -30,8 +30,12 @@ def get_article(article_id):
     return jsonify(article.dict())
 
 
-@app.route("/articles/", methods=["GET"])
+@app.route("/article-list/", methods=["GET"])
 def list_articles():
     query = ListArticlesQuery()
     articles = query.execute()
     return jsonify([article.dict() for article in articles])
+
+
+if __name__ == "__main__":
+    app.run()
