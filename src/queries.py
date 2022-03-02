@@ -1,12 +1,9 @@
 from typing import List
-
 from pydantic import BaseModel
-
 from src.models import Article
 
 
 class ListArticlesQuery(BaseModel):
-
     def execute(self) -> List[Article]:
         articles = Article.list()
 
@@ -19,5 +16,13 @@ class GetArticleByIDQuery:
 
     def execute(self) -> Article:
         article = Article.get_by_id(self.id)
+        return article
 
+
+class GetArticleByTitleQuery:
+    def __init__(self, title):
+        self.title = title
+
+    def execute(self) -> Article:
+        article = Article.get_by_title(self.title)
         return article

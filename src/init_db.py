@@ -1,3 +1,8 @@
+"""
+E2E (end-to-end) tests need the live server to be running.
+"""
+from src.models import Article
+
+
 if __name__ == "__main__":
-    from src.models import Article
     Article.create_table()

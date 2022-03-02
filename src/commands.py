@@ -1,5 +1,4 @@
 from pydantic import BaseModel, EmailStr
-
 from src.models import Article, NotFound
 
 

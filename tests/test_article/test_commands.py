@@ -1,5 +1,4 @@
 import pytest
-import pydantic
 
 from src.models import Article
 from src.commands import CreateArticleCommand, AlreadyExists
@@ -28,7 +27,7 @@ def test_create_article():
 
 
 @pytest.mark.xfail()
-def test_creating_article_with_wrong_email_format():
+def test_create_article_with_wrong_email_format():
     """
     GIVEN CreateArticleCommand with a wrong email format
     WHEN the execute method is called
@@ -38,6 +37,23 @@ def test_creating_article_with_wrong_email_format():
     cmd = CreateArticleCommand(
         author="rustam_zokirov",
         title="New Article",
+        content="Super awesome article"
+    )
+
+    cmd.execute()
+
+
+@pytest.mark.xfail()
+def test_create_article_with_wrong_title_as_integer():
+    """
+    GIVEN CreateArticleCommand with a wrong email format
+    WHEN the execute method is called
+    THEN the AlreadyExists exception must be raised
+    """
+
+    cmd = CreateArticleCommand(
+        author="rustam_zokirov",
+        title=1234,
         content="Super awesome article"
     )
 
