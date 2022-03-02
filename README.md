@@ -23,7 +23,7 @@
 ### How to run?
 - `python -m pytest -v --tb=no tests/`
 - `python -m pytest tests --cov=src --cov-report html`
-- `python blog/init_db.py && FLASK_APP=blog/app.py python -m flask run`
+- `python src/init_db.py && FLASK_APP=src/app.py python -m flask run`
 - `python -m pytest tests -m 'e2e'`
 
 ### Creating a Flask API

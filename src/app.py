@@ -35,6 +35,3 @@ def list_articles():
     query = ListArticlesQuery()
     articles = query.execute()
     return jsonify([article.dict() for article in articles])
-
-
-

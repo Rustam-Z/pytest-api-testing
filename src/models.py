@@ -83,6 +83,3 @@ class Article(BaseModel):
         con.close()
 
         return article
-
-
-
