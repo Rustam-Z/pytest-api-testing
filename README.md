@@ -14,7 +14,7 @@
 - Organize database operations with commands (modify state, has side effects) and queries (read-only, no side effects)
 
 ### Test plan
-- Write unit, integration, and end-to-end tests with pytest 
+- Unit tests (to test queries and commands), integration (to test API endpoints), and end-to-end tests with pytest 
 - Generate a coverage report
 - Create a test framework:
   - `commands.py`, CreateArticleCommand
